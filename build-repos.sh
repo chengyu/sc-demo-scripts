@@ -4,7 +4,8 @@ DIRS0="ndn-cxx"
 DIRS1="NFD"
 DIRS2="repo-ng"
 DIRS3="NLSR" # need to figure out the version 0.3.1
-DIRS4="chronoSync" # need to figure out the version with 0.5.0: 36eb3edb8169bdc345490128b80002b204f026e5
+DIRS4="ChronoSync" # need to figure out the version with 0.5.0: 36eb3edb8169bdc345490128b80002b204f026e5
+DIRS5="ndn-atmos" # need to figure out the version with 0.5.0: 36eb3edb8169bdc345490128b80002b204f026e5
 
 release="NONE"
 CLEAN="FALSE"
@@ -120,6 +121,49 @@ do
   else
     echo "Building $d"
     ./waf configure
+    ./waf 
+    sudo ./waf install
+  fi
+
+  popd
+done 
+
+for d in $DIRS4
+do
+  pushd $d
+
+  if [ $release != "NONE" ]; then
+    echo "Checkouting to $DIRS4-0.3.0"
+    git checkout 0.3.0 -b 0.3.0
+  fi
+
+  if [ $CLEAN = "TRUE" ]; then
+    echo "Cleaning $d"
+    sudo ./waf uninstall
+    ./waf clean
+    ./waf distclean
+  else
+    echo "Building $d"
+    ./waf configure
+    ./waf 
+    sudo ./waf install
+  fi
+
+  popd
+done 
+
+for d in $DIRS5
+do
+  pushd $d
+
+  if [ $CLEAN = "TRUE" ]; then
+    echo "Cleaning $d"
+    sudo ./waf uninstall
+    ./waf clean
+    ./waf distclean
+  else
+    echo "Building $d"
+    ./waf configure --with-log4cxx
     ./waf 
     sudo ./waf install
   fi
