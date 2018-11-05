@@ -1,0 +1,1 @@
+sudo cp conf-files/nfd.conf conf-files/repo-ng.conf /usr/local/etc/ndn/
