@@ -5,7 +5,7 @@ if [ $ARG == "start" ]; then
 #    sleep 3
 #    /usr/local/bin/nfdstat_c -p /cmip5/den/ndnmap/stats -d 1 &
 #    # using nlsr
-#    /usr/local/bin/nfdc set-strategy /catalog/genom /localhost/nfd/strategy/weighted-load-balancer
+    /usr/local/bin/nfdc set-strategy /catalog/genom /localhost/nfd/strategy/weighted-load-balancer
 
     sleep 3
     /usr/local/bin/atmos-catalog -f catalog-conf/genom-test.conf &
