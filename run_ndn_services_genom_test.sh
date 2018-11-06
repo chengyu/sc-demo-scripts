@@ -8,7 +8,7 @@ if [ $ARG == "start" ]; then
 #    /usr/local/bin/nfdc set-strategy /catalog/genom /localhost/nfd/strategy/weighted-load-balancer
 
     sleep 3
-    /usr/local/bin/atmos-catalog -f /home/chengyu/workspace/sc-demo/catalog-conf/genom-test.conf &
+    /usr/local/bin/atmos-catalog -f catalog-conf/genom-test.conf &
 
     nohup /usr/local/bin/ndn-repo-ng &
 fi
