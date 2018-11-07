@@ -13,8 +13,8 @@ if [ $ARG == "start" ]; then
     ##/usr/local/bin/atmos-catalog -f $DIR/catalog-conf/genom-test.conf &
     ##/usr/local/bin/atmos-catalog -f catalog-conf/genom-test.conf &
 
-    #nohup /usr/local/bin/ndn-repo-ng -c $DIR/conf-files/lbl/repo-ng-e.conf &
-    #nohup /usr/local/bin/ndn-repo-ng -c conf-files/lbl/repo-ng-e.conf &
+    #nohup /usr/local/bin/ndn-repo-ng -c $DIR/conf-files/den/repo-ng-e.conf &
+    #nohup /usr/local/bin/ndn-repo-ng -c conf-files/den/repo-ng-e.conf &
 fi
 
 if [ $ARG == "stop" ]; then
